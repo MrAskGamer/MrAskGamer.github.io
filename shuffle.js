@@ -20,4 +20,3 @@ document.addEventListener('keypress', (e) => {
     }
 })
 reset()
-
