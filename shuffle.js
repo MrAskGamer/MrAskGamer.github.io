@@ -3,8 +3,7 @@ function shuffle(array) {let currentIndex = array.length,  randomIndex;while (cu
 document.querySelectorAll(".correct").forEach(e => e.addEventListener('click', () => {e.style.background = '#90ee90'}))
 document.querySelectorAll(".wrong").forEach(e => e.addEventListener('click', () => {e.style.background = '#FFCCCB'}))
 
-document.addEventListener('keypress', (e) => {
-    if (e.key == 'r') {
+function reset() {
         document.querySelectorAll(".correct, .wrong").forEach(e => e.style.background = '')
         let temp = shuffle(Array.prototype.slice.call(document.body.children)).filter(e => e.tagName == 'DIV')
         temp.forEach(e => {
@@ -14,5 +13,11 @@ document.addEventListener('keypress', (e) => {
         })
         document.body.innerHTML = ''
         temp.forEach(e => {document.body.appendChild(e)})
+}
+document.addEventListener('keypress', (e) => {
+    if (e.key == 'r') {
+        reset()
     }
 })
+reset()
+
